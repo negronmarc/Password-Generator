@@ -16,13 +16,9 @@ var upperCaseCharArr = upperCaseLetterStr.split("");
 var lowerCaseCharArr = lowerCaseChars.split("");
 var numbersArr = numbersStr.split("");
 
-// Array to hold all character sets confirmed by user
 var userCharPool = [];
 
-// Array to hold all the chars for the final password.
 var aPassword = [];
-
-// TODO: create an array variable to store the guaranteed chars - one char from each character set which user has confirmed
 
 var guaranteedCharsArr = [];
 
