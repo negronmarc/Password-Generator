@@ -1,7 +1,18 @@
-# Password Generator
+# Work Day Scheduler 
 
+## Description
 The goal of this project was to create an application that enables users to generate random passwords based on the criteria that they have selected. This application will run in the browser and has a responsive user interface that adapts to multiple screen sizes.
 
-![Screen capture of the password generator website](https://github.com/negronmarc/passwordgenerator/blob/main/assets/images/preview.PNG?raw=true)
+## Table of Contents
+- [Technologies](#technologies)
+- [Preview](#preview)
+- [Launch](#launch)
 
-https://negronmarc.github.io/passwordgenerator/
+## Technologies
+- HTML
+- CSS
+- JavaScript
+## Preview
+![Img](assets/images/preview.PNG)
+## Launch
+[Github Pages](https://negronmarc.github.io/passwordgenerator/)

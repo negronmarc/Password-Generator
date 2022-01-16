@@ -1,9 +1,5 @@
 console.log("js is working");
 
-// ==============
-// DATA
-// ==============
-
 var generatePasswordIDBtn = document.getElementById("generate");
 
 var specialCharStr = "~`!@$%^&*()_+-=";
@@ -22,25 +18,21 @@ var aPassword = [];
 
 var guaranteedCharsArr = [];
 
-// ================
-// MAIN PROCESS
-// ================
+function generatePassword() {
+  var userChoiceLength = prompt("Enter password length: ");
+  console.log(userChoiceLength);
 
-function generatePassword () {
-    var userChoiceLength = prompt("Enter password length: ");
-        console.log(userChoiceLength);
+  var userChoiceSpecialChars = confirm("Special Characters?");
+  console.log(userChoiceSpecialChars);
 
-    var userChoiceSpecialChars = confirm("Special Characters?");
-        console.log(userChoiceSpecialChars);
+  var userChoiceUpperCase = confirm("Upper Case?");
+  console.log(userChoiceUpperCase);
 
-    var userChoiceUpperCase = confirm("Upper Case?");
-        console.log(userChoiceUpperCase);
+  var userChoiceLowerCase = confirm("Lower Case?");
+  console.log(userChoiceLowerCase);
 
-    var userChoiceLowerCase = confirm("Lower Case?");
-        console.log(userChoiceLowerCase);
-
-    var userChoiceNumbers = confirm("Numbers?");
-        console.log(userChoiceNumbers);
+  var userChoiceNumbers = confirm("Numbers?");
+  console.log(userChoiceNumbers);
 
   function copyArrayToPool(arr) {
     for (var i = 0; i < arr.length; i++) {
@@ -58,7 +50,7 @@ function generatePassword () {
   if (userChoiceUpperCase) {
     userCharPool = userCharPool.concat(upperCaseCharArr);
     guaranteedCharsArr = Math.floor(Math.random() * upperCaseLetterStr.length);
-    }
+  }
 
   if (userChoiceLowerCase) {
     copyArrayToPool(lowerCaseCharArr);
@@ -68,7 +60,7 @@ function generatePassword () {
   if (userChoiceNumbers) {
     userCharPool = userCharPool.concat(numbersArr);
     guaranteedCharsArr = Math.floor(Math.random() * numbersStr.length);
-  };
+  }
 
   for (var i = 0; i < userChoiceLength; i++) {
     var index = Math.floor(Math.random() * userCharPool.length);
@@ -76,22 +68,20 @@ function generatePassword () {
     console.log(userCharPool[index]);
 
     aPassword.push(userCharPool[index]);
-
   }
 
   console.log(aPassword);
-  
-  aPassword.splice(0,1, guaranteedCharsArr);
 
-  aPassword.splice(1,1, guaranteedCharsArr);
+  aPassword.splice(0, 1, guaranteedCharsArr);
+
+  aPassword.splice(1, 1, guaranteedCharsArr);
 
   finalPassword = aPassword.join("");
-  
+
   console.log(finalPassword);
 
   return finalPassword;
-
-};
+}
 
 function writePassword() {
   var password = generatePassword();
@@ -100,8 +90,6 @@ function writePassword() {
   passwordTextEl.value = password;
 
   return;
-
 }
 
 generatePasswordIDBtn.addEventListener("click", writePassword);
-
