@@ -19,8 +19,13 @@ var aPassword = [];
 var guaranteedCharsArr = [];
 
 function generatePassword() {
-  var userChoiceLength = prompt("Enter password length: ");
+  var userChoiceLength = prompt("Enter password length (8-128 characters): ");
   console.log(userChoiceLength);
+
+  if (userChoiceLength < 8 || userChoiceLength > 128) {
+    alert("Password must be between 8 and 128 characters");
+    return generatePassword();
+  }
 
   var userChoiceSpecialChars = confirm("Special Characters?");
   console.log(userChoiceSpecialChars);
@@ -33,6 +38,16 @@ function generatePassword() {
 
   var userChoiceNumbers = confirm("Numbers?");
   console.log(userChoiceNumbers);
+
+  if (
+    !userChoiceSpecialChars &&
+    !userChoiceUpperCase &&
+    !userChoiceLowerCase &&
+    !userChoiceNumbers
+  ) {
+    alert("You must choose at least one set of characters");
+    return generatePassword();
+  }
 
   function copyArrayToPool(arr) {
     for (var i = 0; i < arr.length; i++) {
@@ -71,10 +86,6 @@ function generatePassword() {
   }
 
   console.log(aPassword);
-
-  aPassword.splice(0, 1, guaranteedCharsArr);
-
-  aPassword.splice(1, 1, guaranteedCharsArr);
 
   finalPassword = aPassword.join("");
 
