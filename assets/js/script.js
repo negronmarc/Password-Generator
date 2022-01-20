@@ -12,12 +12,12 @@ var upperCaseCharArr = upperCaseLetterStr.split("");
 var lowerCaseCharArr = lowerCaseChars.split("");
 var numbersArr = numbersStr.split("");
 
-var userCharPool = [];
-
-var guaranteedCharsArr = [];
-
 function generatePassword() {
+  var userCharPool = [];
+
   var aPassword = [];
+
+  var guaranteedCharsArr = [];
 
   var userChoiceLength = prompt("Enter password length (8-128 characters): ");
   console.log(userChoiceLength);
