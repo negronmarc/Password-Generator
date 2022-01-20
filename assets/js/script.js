@@ -14,11 +14,11 @@ var numbersArr = numbersStr.split("");
 
 var userCharPool = [];
 
-var aPassword = [];
-
 var guaranteedCharsArr = [];
 
 function generatePassword() {
+  var aPassword = [];
+
   var userChoiceLength = prompt("Enter password length (8-128 characters): ");
   console.log(userChoiceLength);
 
