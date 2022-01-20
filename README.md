@@ -15,4 +15,4 @@ The goal of this project was to create an application that enables users to gene
 ## Preview
 ![Img](assets/images/preview.PNG)
 ## Launch
-[Github Pages](https://negronmarc.github.io/passwordgenerator/)
+[Github Pages](https://negronmarc.github.io/Password-Generator/)
